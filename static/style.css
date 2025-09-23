@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #000 url('/static/bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    color: orange;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn {
+    background-color: orange;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.action_btn:hover {
+    transform: scale(1.05);
+}
+
+.action_btn:active {
+    transform: scale(0.95);
+}
+
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 0;
+}
+
+.dropdown_menu.open {
+    display: block;
+    max-height: 300px;
+}
+
+.dropdown_menu li {
+    padding: 1rem;
+    text-align: center;
+}
+
+.section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.section.alt {
+    background: rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section h1,
+.section h2 {
+    margin-bottom: 1rem;
+}
+
+.section h1 {
+    font-size: 3rem;
+}
+
+.section h2 {
+    font-size: 2rem;
+    color: orange;
+}
+
+.section p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.service_list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem auto 0;
+    max-width: 500px;
+    text-align: left;
+}
+
+.service_list li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.service_list i {
+    color: orange;
+    font-size: 1.2rem;
+}
+
+.task_form {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem auto;
+    justify-content: center;
+}
+
+.task_form input {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 300px;
+}
+
+.task_list {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+}
+
+.task_item {
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item.done span {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.task_actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.complete {
+    background: green;
+    color: white;
+}
+
+.btn.complete:hover {
+    background: darkgreen;
+}
+
+.btn.delete {
+    background: crimson;
+    color: white;
+}
+
+.btn.delete:hover {
+    background: darkred;
+}
+
+.no_task {
+    text-align: center;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+        display: none;
+    }
+
+    .navbar .toggle_btn {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+    .task_form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .task_form input {
+        width: 100%;
+    }
+}
